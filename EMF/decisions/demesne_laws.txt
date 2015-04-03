@@ -1252,10 +1252,7 @@ laws = {
 		group = administration
 		
 		allow = {
-			has_law = emperor_peace_2
-			has_law = inheritance_1
-			not = { has_law = crown_levies_0 }
-			not = { has_law = revokation_0 }
+			has_law = crown_authority_4
 		}
 		
 		potential = {
@@ -1325,7 +1322,6 @@ laws = {
 				revoke_law = themes_1
 				revoke_law = themes_2
 			}
-			add_law = vice_royalty_2
 		}
 		
 		castle_vassal_max_levy = -0.1
@@ -1400,7 +1396,6 @@ laws = {
 				revoke_law = themes_1
 				revoke_law = themes_2
 			}
-			add_law = vice_royalty_2
 		}
 
 		castle_vassal_max_levy = -0.05
@@ -1472,7 +1467,6 @@ laws = {
 				revoke_law = themes_1
 				revoke_law = themes_2
 			}
-			add_law = vice_royalty_2
 		}
 	}
 }

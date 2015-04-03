@@ -25,6 +25,10 @@ spriteTypes = {
 		texturefile = "gfx/interface/decision_icon_emf_customize_mr.tga"
 	}
 	spriteType = {
+		name = "GFX_emf_customize_mr_rules"
+		texturefile = "gfx/interface/decision_icon_emf_customize_mr.tga"
+	}
+	spriteType = {
 		name = "GFX_emf_customize_nwo"
 		texturefile = "gfx/interface/decision_icon_emf_customize_nwo.tga"
 	}
@@ -51,7 +55,32 @@ spriteTypes = {
 	}
 	# Autolander
 	spriteType = {
-		name = "GFX_emf_autolander_distribute_land"
+		name = "GFX_emf_autolander"
 		texturefile = "gfx/interface/decision_icon_emf_autolander_distribute_land.tga"
+	}
+	spriteType = {
+		name = "GFX_emf_autolander_low_prio"
+		texturefile = "gfx/interface/decision_icon_emf_autolander_distribute_land.tga"
+	}
+	spriteType = {
+		name = "GFX_emf_autolander_auto"
+		texturefile = "gfx/interface/decision_icon_emf_autolander_distribute_land.tga"
+	}
+	spriteType = {
+		name = "GFX_emf_autolander_auto_low_prio"
+		texturefile = "gfx/interface/decision_icon_emf_autolander_distribute_land.tga"
+	}
+	# Prisoner
+	spriteType = {
+		name = "GFX_emf_prisoner_ransom_all"
+		texturefile = "gfx/interface/decision_icon_emf_prisoner_ransom_all.tga"
+	}
+	spriteType = {
+		name = "GFX_emf_prisoner_release"
+		texturefile = "gfx/interface/decision_icon_emf_prisoner_release.tga"
+	}
+	spriteType = {
+		name = "GFX_emf_prisoner_execute"
+		texturefile = "gfx/interface/decision_icon_emf_prisoner_execute.tga"
 	}
 }

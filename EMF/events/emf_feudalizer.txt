@@ -73,20 +73,11 @@ character_event = {
 			set_character_flag = emf_no_law_penalties
 			
 			any_demesne_title = {
-				limit = { is_crown_law_title = yes }
-				
-				add_law = crown_levies_0
-				add_law = revokation_1
-				add_law = inheritance_0
-				
-				if = {
-					limit = { tier = king }
-					add_law = king_peace_0
+				limit = {
+					higher_tier_than = duke
 				}
-				if = {
-					limit = { tier = emperor }
-					add_law = emperor_peace_0
-				}
+				
+				add_law = crown_authority_0
 				
 				if = {
 					limit = {
@@ -97,7 +88,7 @@ character_event = {
 							}
 						}
 					}
-					add_law = investiture_1
+					add_law = investiture_law_1
 				}
 			}
 			

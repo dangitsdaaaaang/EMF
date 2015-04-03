@@ -1629,22 +1629,11 @@ decisions = {
 	form_new_kingdom = {
 		is_high_prio = yes
 		potential = {
-			had_global_flag = { flag = HIP days = 1 }
+			ai = no
 			is_playable = yes
 			tier = DUKE
 			NOT = { tier = KING }
-			OR = {
-				ai = no
-				AND = {
-					trait = proud
-					prestige = 5000
-				}
-				AND = {
-					trait = ambitious
-					prestige = 5000
-				}
-				prestige = 15000
-			}
+			had_global_flag = { flag = HIP days = 1 }
 		}
 		allow = {
 			is_adult = yes
@@ -1739,29 +1728,18 @@ decisions = {
 			always = no
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 
 	form_new_empire = {
 		is_high_prio = yes
 		potential = {
-			had_global_flag = { flag = HIP days = 1 }
+			ai = no
 			is_playable = yes
 			tier = KING
 			NOT = { tier = EMPEROR }
-			OR = {
-				ai = no
-				AND = {
-					trait = proud
-					prestige = 40000
-				}
-				AND = {
-					trait = ambitious
-					prestige = 40000
-				}
-				prestige = 120000
-			}
+			had_global_flag = { flag = HIP days = 1 }
 		}
 		allow = {
 			is_adult = yes
@@ -1797,42 +1775,6 @@ decisions = {
 					holder = ROOT
 					base_title = THIS
 					copy_title_laws = yes
-				}
-				
-				hidden_tooltip = {
-					# EMF: Convert king_peace laws to emperor_peace
-					
-					ROOT = { set_character_flag = emf_no_law_penalties }
-					
-					if = {
-						limit = { has_law = king_peace_0 }
-						ROOT = {
-							primary_title = {
-								revoke_law = king_peace_0
-								add_law = emperor_peace_0
-							}
-						}
-					}
-					if = {
-						limit = { has_law = king_peace_1 }
-						ROOT = {
-							primary_title = {
-								revoke_law = king_peace_1
-								add_law = emperor_peace_1
-							}
-						}
-					}
-					if = {
-						limit = { has_law = king_peace_2 }
-						ROOT = {
-							primary_title = {
-								revoke_law = king_peace_2
-								add_law = emperor_peace_2
-							}
-						}
-					}
-					
-					ROOT = { clr_character_flag = emf_no_law_penalties }
 				}
 
 				hidden_tooltip = {
@@ -1886,7 +1828,7 @@ decisions = {
 			always = no
 		}
 		ai_will_do = {
-			factor = 1
+			factor = 0
 		}
 	}
 	
@@ -1930,19 +1872,9 @@ decisions = {
 				any_demesne_title = {
 					if = {
 						limit = {
-							is_crown_law_title = yes
+							higher_tier_than = duke
 						}
-						add_law = crown_levies_0
-						if = {
-							limit = { tier = king }
-							add_law = king_peace_0
-						}
-						if = {
-							limit = { tier = emperor }
-							add_law = emperor_peace_0
-						}
-						add_law = revokation_0
-						add_law = inheritance_0
+						add_law = crown_authority_0
 						if = {
 							limit = {
 								ROOT = {
@@ -1952,7 +1884,7 @@ decisions = {
 									}
 								}
 							}
-							add_law = investiture_1
+							add_law = investiture_law_1
 						}
 					}
 				}
@@ -2096,32 +2028,20 @@ decisions = {
 				set_character_flag = emf_no_law_penalties
 				
 				any_demesne_title = {
+					limit = {
+						higher_tier_than = duke
+					}
+					add_law = crown_authority_0
 					if = {
 						limit = {
-							is_crown_law_title = yes
-						}
-						add_law = crown_levies_0
-						if = {
-							limit = { tier = king }
-							add_law = king_peace_0
-						}
-						if = {
-							limit = { tier = emperor }
-							add_law = emperor_peace_0
-						}
-						add_law = revokation_0
-						add_law = inheritance_0
-						if = {
-							limit = {
-								ROOT = {
-									OR = {
-										religion = catholic
-										religion = fraticelli
-									}
+							ROOT = {
+								OR = {
+									religion = catholic
+									religion = fraticelli
 								}
 							}
-							add_law = investiture_1
 						}
+						add_law = investiture_law_1
 					}
 				}
 				
