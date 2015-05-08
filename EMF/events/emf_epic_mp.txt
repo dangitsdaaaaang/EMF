@@ -1,0 +1,48 @@
+
+namespace = emf_epic_mp
+
+
+
+character_event = {
+	id = emf_epic_mp.0
+	desc = placeholder_p
+	picture = GFX_evt_bloody_man
+	border = GFX_event_normal_frame_intrigue
+	is_triggered_only = yes
+	
+	option = {
+		name = OK
+		
+		c_1000270523 = {
+			add_trait = bl_mrt
+			any_child = { character_event = { id = emf_epic_mp.10 } }
+		}
+	}
+}
+
+
+character_event = {
+	id = emf_epic_mp.10
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		or = {
+			and = {
+				is_father_real_father = no
+				real_father = { trait = bl_mrt }
+			}
+			and = {
+				is_father_real_father = yes
+				father = { trait = bl_mrt }
+			}
+			mother = { trait = bl_mrt }
+		}
+	}
+	
+	option = {
+		name = OK
+		add_trait = bl_mrt
+		any_child = { character_event = { id = emf_epic_mp.10 } }
+	}
+}

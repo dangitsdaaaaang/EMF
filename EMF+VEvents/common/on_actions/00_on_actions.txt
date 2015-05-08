@@ -1705,6 +1705,7 @@ on_birth = {
 		707 # Keeping it in the Family achievement
 		CM.10011 # Chronicle entry
 		meneth.700 #Inheritance of traits from grandparents
+		emf_epic_mp.10 # bl_mrt inheritance
 	}
 	random_events = {
 		200 = 0

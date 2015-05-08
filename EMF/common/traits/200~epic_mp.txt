@@ -1,0 +1,7 @@
+
+bl_mrt = {
+	martial = 2
+	
+	customizer = no
+	random = no
+}
