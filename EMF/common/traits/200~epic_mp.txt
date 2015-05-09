@@ -5,3 +5,11 @@ bl_mrt = {
 	customizer = no
 	random = no
 }
+
+bl_armchair = {
+	martial = 1
+	intrigue = 1
+	
+	customizer = no
+	random = no
+}

@@ -10,12 +10,21 @@ character_event = {
 	border = GFX_event_normal_frame_intrigue
 	is_triggered_only = yes
 	
+	trigger = {
+		has_landed_title = e_hip
+	}
+	
 	option = {
 		name = OK
 		
 		c_1000270523 = {
 			add_trait = bl_mrt
 			any_child = { character_event = { id = emf_epic_mp.10 } }
+		}
+		
+		c_1000252354 = {
+			add_trait = bl_armchair
+			any_child = { character_event = { id = emf_epic_mp.11 } }
 		}
 	}
 }
@@ -44,5 +53,31 @@ character_event = {
 		name = OK
 		add_trait = bl_mrt
 		any_child = { character_event = { id = emf_epic_mp.10 } }
+	}
+}
+
+character_event = {
+	id = emf_epic_mp.11
+	hide_window = yes
+	is_triggered_only = yes
+	
+	trigger = {
+		or = {
+			and = {
+				is_father_real_father = no
+				real_father = { trait = bl_armchair }
+			}
+			and = {
+				is_father_real_father = yes
+				father = { trait = bl_armchair }
+			}
+			mother = { trait = bl_armchair }
+		}
+	}
+	
+	option = {
+		name = OK
+		add_trait = bl_armchair
+		any_child = { character_event = { id = emf_epic_mp.11 } }
 	}
 }
