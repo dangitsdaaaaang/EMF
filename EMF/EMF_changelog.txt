@@ -1,3 +1,54 @@
+EMF 3.11 [2015-05-08]
+	**New feature:** *Banish from Court*
+		Players may now banish extraneous courtiers from their courts, assuming that courtier is not a child, not employed officially, and not a prisoner.
+		Banished courtiers of the same religion will find another court in the player's realm to call home, while those of a different religion will attempt to flee to another realm with the same religion, if such exists.
+	**New feature:** *Expanded decision menu*
+		The intrigue screen now features a larger decision menu, capable of displaying 7 decisions at once compared to vanilla's puny 4. It can also now display an additional available and backed plot, which is *definitely* the most popular EMF feature request. You can tell by all the forum threads about it. You're welcome.
+		The dimensions of the intrigue screen are unchanged, meaning this feature retains compatibility with the same display resolutions as vanilla CKII.
+	**New module:** *Crier*
+		Adds some flavorful announcements to relatively rare events in the game world, along with small, related mechanics.
+		List of announcements currently include:
+			Religion Head sacrificed by another faith
+			Empire formation
+			Empire disintegration
+			Player death (Multiplayer only)
+		Other events may be added in the future.
+	**New CB:** *Subjugation*
+		Usurps no titles, force-vassalizes the target, and gives them a temporary Subjugated opinion bonus (to offset the declaration of war)
+		Can be used by duke- or higher-tier rulers against count- or higher-tier rulers of the same religion (though target must be lower-tier)
+		*ALL* non-titular, count- or higher-tier titles of the target must be de jure vassals of a title held within the attacker's [sub-]realm (i.e., held personally or by vassals).
+		Cannot be used on mercenaries, holy orders, the Pope, etc.
+		To be used on counts, no *Crown Authority* is required.
+		To be used on dukes, it requires the target to be subject to a crown title held by you or one of your vassals that has at least *Medium Crown Authority*.
+		To be used on kings, it requires the target to be subject to a crown title held by you or one of your vassals that has at least *High Crown Authority*.
+		This is now a way to vassalize an existing Merchant Republic without destroying it in the process.
+	New HRE formation decision and EMF+SWMH de jure setup in the 867 start that should improve how and when the HRE can be formed (new campaign required for proper effect)
+	Merchant Republics:
+		When a patrician house goes extinct, it is now replaced with what is likely to be a powerful existing vassal of the Doge rather than a pathetic new, random house
+			Assassinate your rivals into the ground, if you dare: one goes down, another pops-up.
+		*Convert to Merchant Republic:*
+			AI patricians in the new merchant republic will now almost surely receive a city of their own, usually converted into a county capital, so they will be far better competition for the Doge as well as more prosperous.
+			During republic conversion, extra corner cases more neatly covered when severing ties to previous realm, becoming independent duchy, and ensuring control over all titles in duchy
+	New ruler demesne distribution mechanic upon scenario initialization:
+		If a feudal ruler has excess demesne capacity at startup, they will seize feudal baronies from randomly-generated feudal vassal barons
+		First, they will seize what they can in their capital county (until no more capacity).
+		Second, they will seize what they can in their capital duchy (until no more capacity).
+		Finally, they will seize what they can in their general demesne (until no more capacity).
+		When such a random vassal baron becomes consequently unlanded and is not already assigned as a councillor, they will be killed (fewer living characters).
+		Historical barons are exempt.
+	Muslims no longer enjoy +1 demesne limit as a religion property
+	Castle, temple, and city buildings which add levy_size and garrison_size modifiers have been buffed (returned to vanilla for the most part)
+	Realm intrigue (personal + any spouse contribution + spymaster) now inherently improves plot power
+	(EMF+SWMH) Base, tier-derived demesne limit raised by +1 for count- and above-tier rulers (reversal of change from prior release, SWMH has many small/low-capacity provinces)
+	(EMF+SWMH) Duke-tier base vassal limit dropped to vanilla (10-- 15 if a great-duke); king- and emperor-tiers also relatively dropped but still greater than vanilla map (each +5 from vanilla)
+	(EMF+SWMH) Tribal garrison and levy empty holding slot modifiers reduced to vanilla (+50%) while tax left heightened (+70%) due to some province (over-)density issues in Scandinavia
+	FIX: *Automatic Empire Disintegration* previously had the potential to grant more than one kingdom (indeed, all de jure vassal kingdoms that aren't held and pass the 50% rule) to the ex-emperor, due to a patch change
+	FIX: Command veteran trait effects toned-down to work as originally intended (a code merge error in the last release let some old code into the release; main differences now are no diplomacy boosts at higher tiers and less martial boost)
+	FIX: Center "flank" leaders should now also be eligible for command veteran traits, earned through major victorious battles
+	FIX: *Free Infidel Revocation* now appropriately gives twice the opinion malus to all ruler classes as *Title Revocation Allowed*
+	FIX: *Complete King's Peace* now appropriately gives twice the opinion malus to feudal rulers as *Internal King's Peace*
+
+
 EMF 3.10 [2015-04-24]
 	Updated for CKII v2.3.4
 	Siege module updates:

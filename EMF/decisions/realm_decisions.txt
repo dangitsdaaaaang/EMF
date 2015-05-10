@@ -3,7 +3,6 @@ decisions = {
 	hold_a_epic_tournament  = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			NOT = {
 				has_character_flag = epic_tournament
@@ -143,7 +142,6 @@ decisions = {
 		is_high_prio = yes
 		potential = {
 			ai = no
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			NOT = { has_character_flag = requested_de_jure_title }
 			liege = {
@@ -232,7 +230,6 @@ decisions = {
 	hold_a_furusiyya  = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			NOT = {
 				has_character_flag = epic_tournament_furusiyya
@@ -310,7 +307,6 @@ decisions = {
 	restore_roman_empire = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "Legacy of Rome"
 			age = 16
@@ -350,7 +346,6 @@ decisions = {
 	mend_great_schism = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "Legacy of Rome"
 			age = 16
@@ -450,7 +445,6 @@ decisions = {
 	claim_constantinople = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "Legacy of Rome"
 			NOT = { has_landed_title = c_byzantion }
@@ -487,7 +481,6 @@ decisions = {
 	petition_doge_for_tp = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			is_merchant_republic = no
 			is_patrician = yes
@@ -536,7 +529,6 @@ decisions = {
 	usurp_tp = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			is_merchant_republic = yes
 			is_patrician = yes
@@ -612,7 +604,6 @@ decisions = {
 	organize_varangian_guard = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_landed_title = e_byzantium
 			is_female = no
@@ -716,7 +707,6 @@ decisions = {
 	become_saoshyant = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "The Old Gods"
 			religion_group = zoroastrian_group
@@ -767,7 +757,6 @@ decisions = {
 	create_leon = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_landed_title = k_asturias
 			k_leon = {
@@ -801,7 +790,6 @@ decisions = {
 	restore_priesthood = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "The Old Gods"
 			religion_group = zoroastrian_group
@@ -849,7 +837,6 @@ decisions = {
 	build_third_temple = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "Sons of Abraham"
 			religion_group = jewish_group
@@ -882,7 +869,6 @@ decisions = {
 	restore_high_priesthood = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "Sons of Abraham"
 			religion = jewish
@@ -934,7 +920,6 @@ decisions = {
 	create_israel = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			has_dlc = "Sons of Abraham"
 			religion_group = jewish_group
@@ -1205,114 +1190,11 @@ decisions = {
 	# Decision 'become_samrat_chakravartin' moved to:
 	# emf_indian_empire_decision.txt
 
-	form_the_hre = {
-		is_high_prio = yes
-		potential = {
-			has_global_flag = HIP
-			had_global_flag = { flag = HIP days = 1 }
-			has_global_flag = charlemagne_hre
-			is_playable = yes
-			independent = yes
-			OR = {
-				religion = catholic
-				religion = fraticelli
-			}
-			OR = {
-				culture = german
-				culture = dutch
-			}
-			e_hre = {
-				has_holder = no
-			}
-			e_france = {
-				has_holder = no
-			}
-		}
-		allow = {
-			is_adult = yes
-			prisoner = no
-			NOT = { trait = incapable }
-			prestige = 1000
-			realm_size = 180
-			or = {
-				has_landed_title = e_germany
-				and = {
-					has_landed_title = k_germany
-					any_demesne_title = {
-						tier = king
-						or = {
-							title = k_bavaria
-							title = k_bohemia
-							title = k_lotharingia
-							title = k_frisia
-							de_jure_liege = e_hre # SWMH
-						}
-						not = {
-							title = k_germany
-						}
-					}
-				}
-			}
-		}
-		effect = {
-			if = {
-				limit = { has_nickname = no }
-				give_nickname = nick_the_great
-			}
-			primary_title = {
-				e_hre = {
-					grant_title = ROOT
-					copy_title_laws = PREV
-					add_law = succ_feudal_elective
-					make_primary_title = yes
-				}
-			}
-			if = {
-				limit = { not = { has_global_flag = SWMH } }
-				k_germany = { de_jure_liege = e_hre }
-				k_bavaria = { de_jure_liege = e_hre }
-				k_bohemia = { de_jure_liege = e_hre }
-				k_frisia = { de_jure_liege = e_hre }
-				k_lotharingia = { de_jure_liege = e_hre }
-			}
-			any_demesne_title = {
-				limit = {
-					tier = emperor
-					not = { title = e_hre }
-				}
-				hidden_tooltip = {
-					any_direct_de_jure_vassal_title = {
-						de_jure_liege = e_hre
-					}
-				}
-				destroy_landed_title = THIS
-				hidden_tooltip = { activate_title = { title = THIS status = no } }
-			}
-			any_demesne_title = {
-				limit = {
-					tier = king
-					de_jure_liege = e_hre
-					not = {
-						title = k_germany
-					}
-				}
-				destroy_landed_title = THIS
-			}
-			hidden_tooltip = { recalc_succession = yes }
-			prestige = 500
-		}
-		revoke_allowed = {
-			always = no
-		}
-		ai_will_do = {
-			factor = 1
-		}
-	}
+	# Decision form_the_hre not used in favor of emf_create_hre in emf_hre_decisions.txt
 
 	form_the_hre_early = {
 		is_high_prio = yes
 		potential = {
-			has_global_flag = HIP
 			had_global_flag = { flag = HIP days = 1 }
 			NOT = { has_global_flag = charlemagne_hre }
 			NOT = { has_global_flag = rome_restored }

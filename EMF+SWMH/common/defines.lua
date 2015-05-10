@@ -23,10 +23,10 @@ NDiplomacy = {
 	
 	DEMESNE_BASE_MAX_SIZE = 1.0,				-- Base Max Demesne Size
 	DEMESNE_MAX_SIZE_BARON_MULT = 1.0, 			-- Extra Max Demesne Size from the ruler's rank
-	DEMESNE_MAX_SIZE_COUNT_MULT = 1.0, 			-- Extra Max Demesne Size from the ruler's rank
-	DEMESNE_MAX_SIZE_DUKE_MULT = 1.0,			-- Extra Max Demesne Size from the ruler's rank
-	DEMESNE_MAX_SIZE_KING_MULT = 3.0,			-- Extra Max Demesne Size from the ruler's rank
-	DEMESNE_MAX_SIZE_EMPEROR_MULT = 4.0,		-- Extra Max Demesne Size from the ruler's rank
+	DEMESNE_MAX_SIZE_COUNT_MULT = 2.0, 			-- Extra Max Demesne Size from the ruler's rank
+	DEMESNE_MAX_SIZE_DUKE_MULT = 2.0,			-- Extra Max Demesne Size from the ruler's rank
+	DEMESNE_MAX_SIZE_KING_MULT = 4.0,			-- Extra Max Demesne Size from the ruler's rank
+	DEMESNE_MAX_SIZE_EMPEROR_MULT = 5.0,		-- Extra Max Demesne Size from the ruler's rank
 	DEMESNE_MAX_SIZE_GREAT_DUKE_BONUS = 1.0,	-- Extra Max Demesne Size for Dukes with more than one Duchy
 	DEMESNE_MAX_SIZE_STEWARDSHIP_MULT = 0.15,	-- Extra Max Demesne Size from ruler and spouse stewardship
 	DEMESNE_MAX_SIZE_PATRICIAN = 1.0,			-- Extra Max Demesne Size for Patricians (Tier effects do no not apply to Patricians!)
@@ -36,9 +36,9 @@ NDiplomacy = {
 	DEMESNE_MAX_SIZE_TRIBAL_BONUS = 3,			-- All rulers with tribal holdings as their capital have larger demesnes
 	
 	VASSAL_BASE_LIMIT = 1.0,					-- Base Vassal Limit
-	VASSAL_LIMIT_DUKE_MULT = 15.0, 				-- Extra Vassal Limit from the ruler's rank
+	VASSAL_LIMIT_DUKE_MULT = 10.0, 				-- Extra Vassal Limit from the ruler's rank
 	VASSAL_LIMIT_KING_MULT = 25.0, 				-- Extra Vassal Limit from the ruler's rank
-	VASSAL_LIMIT_EMPEROR_MULT = 40.0, 			-- Extra Vassal Limit from the ruler's rank
+	VASSAL_LIMIT_EMPEROR_MULT = 35.0, 			-- Extra Vassal Limit from the ruler's rank
 	VASSAL_LIMIT_GREAT_DUKE_BONUS = 5.0, 		-- Extra Vassal Limit for Dukes with more than one Duchy
 	VASSAL_LIMIT_DIPLOMACY_MULT = 0.3,			-- Extra Vasal Limit from ruler and spouse diplomacy
 	VASSAL_LIMIT_TRIBAL_BONUS = -10,			-- All rulers with tribal holdings as their capital have smaller demesnes
@@ -1013,7 +1013,7 @@ NMilitary = {
 
 NTechnology = {
 	DONT_EXECUTE_TECH_BEFORE = 769,				-- Set this to your earliest starting year
-	POINTS_PER_ATTRIBUTE = 0.015,
+	POINTS_PER_ATTRIBUTE = 0.03,
 
 	BASE_NEIGHBOUR_SPREAD_BONUS = 0.075, 		-- bonus for each neighbour with the tech
 	NEIGHBOUR_SAME_RELIGON_GROUP_MULT = 2.0, 	-- multiplier to the above bonus if neighbour is of your religious group
