@@ -2,10 +2,10 @@
 namespace = emf_epic_mp
 
 
-
+# [0]
 character_event = {
 	id = emf_epic_mp.0
-	desc = placeholder_p
+	desc = placeholder_f
 	picture = GFX_evt_bloody_man
 	border = GFX_event_normal_frame_intrigue
 	is_triggered_only = yes
@@ -29,7 +29,7 @@ character_event = {
 	}
 }
 
-
+# [10]
 character_event = {
 	id = emf_epic_mp.10
 	hide_window = yes
@@ -56,6 +56,7 @@ character_event = {
 	}
 }
 
+# [11]
 character_event = {
 	id = emf_epic_mp.11
 	hide_window = yes
@@ -79,5 +80,109 @@ character_event = {
 		name = OK
 		add_trait = bl_armchair
 		any_child = { character_event = { id = emf_epic_mp.11 } }
+	}
+}
+
+# [100]
+#
+# mongol_invasion:on_success_title before subjugate_or_take_under_title
+# Target title is event_target:emf_title
+character_event = {
+	id = emf_epic_mp.100
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = { save_event_target_as = emf_defender }
+		
+		character_event = { id = emf_epic_mp.101 } # Subjugate revolters
+
+		FROMFROM = {
+			any_realm_province = {
+				limit = {
+					not = { kingdom = { title = event_target:emf_title } }
+					any_province_holding = {
+						is_capital = yes
+						is_occupied = yes
+						controller = {
+							any_war = {
+								attacker = { character = ROOT }
+								defender = { character = FROMFROM }
+								any_attacker = { character = PREVPREV }
+								using_cb = mongol_invasion
+							}
+						}
+					}
+				}
+				if = {
+					limit = { not = { owner = { character = FROMFROM } } }
+					owner = { character_event = { id = emf_epic_mp.102 } }
+				}
+			}
+		}
+	}
+}
+
+
+character_event = {
+	id = emf_epic_mp.101
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		event_target:emf_defender = {
+			any_war = {
+				limit = {
+					defender = { character = event_target:emf_defender }
+					attacker = {
+						independent = no
+						liege = { character = PREV }
+						liege_before_war = { character = event_target:emf_defender }
+					}
+				}
+				any_attacker = {
+					limit = {
+						capital_holding = { de_jure_liege_or_above = event_target:emf_title }
+					}
+					character_event = { id = emf_epic_mp.102 }
+				}
+			}
+		}
+	}
+}
+
+# [102]
+# FROM subjugates ROOT
+character_event = {
+	id = emf_epic_mp.102
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		set_defacto_liege = FROM
+		if = {
+			limit = { religion = FROM }
+			opinion = { who = FROM modifier = opinion_subjugated }
+		}
+		if = {
+			limit = { not = { religion = FROM } }
+			opinion = { who = FROM modifier = opinion_subjugated_other_rel }
+		}
+	}
+}
+
+
+# [150]
+#
+# mongol_invasion:on_success_title AFTER subjugate_or_take_under_title
+# Target title is event_target:emf_title
+character_event = {
+	id = emf_epic_mp.150
+	hide_window = yes
+	is_triggered_only = yes
+	
+	immediate = {
+		FROMFROM = { save_event_target_as = emf_defender }
+		
 	}
 }
