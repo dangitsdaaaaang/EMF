@@ -1,0 +1,36 @@
+
+# These allow conditions will be ADDED to ALL kingdom titles
+# that aren't landless, controls_religion, or primary.
+
+# Basics
+war = no
+has_regent = no
+
+# Imperial Kingdoms law
+or = {
+	FROM = {
+		custom_tooltip = {
+			text = emf_laws_ctt_title_isnt_within_dj_empire
+			hidden_tooltip = {
+				not = {
+					empire = {
+						holder_scope = {
+							same_realm = ROOT
+						}
+					}
+				}
+			}
+		}
+	}
+	top_liege = {
+		has_law = imperial_king_1
+	}
+}
+
+# Titular king titles cannot be created, but they can be usurped.
+FROM = {
+	or = {
+		has_holder = yes
+		is_titular = no
+	}
+}
